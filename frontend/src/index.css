@@ -8,3 +8,7 @@
 body {
   @apply bg-bg1 font-serif;
 }
+
+* {
+  cursor: none !important;
+}
