@@ -27,3 +27,4 @@ dist-ssr
 
 # added files to ignore from git
 package-lock.json
+.vercel
