@@ -153,7 +153,7 @@ const Header = () => {
     >
       {/* Logo */}
       <Link to="/" className="flex items-center">
-        <img src="/logo.jpg" alt="Art&CraftVelly" className="w-16" />
+        <img src="/logo.png" alt="Art&CraftVelly" className="w-16" />
       </Link>
 
       {/* Search & Navigation (Hidden on Mobile) */}
