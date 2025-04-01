@@ -211,7 +211,7 @@ const TestimonialsSection = () => {
 
       {/* Background Images */}
       <img
-        src="/testimonialleft.png"
+        src="flowerwith2bg.png"
         alt="Decor"
         onContextMenu={(e) => e.preventDefault()}
         className="absolute bottom-0 left-0 w-[130px] sm:w-[170px] md:w-[200px] lg:h-[350px] lg:w-fit opacity-80 mix-blend-multiply"

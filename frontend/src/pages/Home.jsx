@@ -5,6 +5,8 @@ import ProductSection from "../components/Home/ProductSection";
 import CustomizerSection from "../components/Home/CustomizerSection";
 import ContactUsSection from "../components/Home/ContactUsSection";
 import TestimonialsSection from "../components/Home/TestimonialsSection";
+import ProjectShowcase from "../components/Home/ProjectShowcase ";
+import MyWorksSection from "../components/Home/MyWorksSection";
 
 const Home = () => {
   return (
@@ -12,6 +14,9 @@ const Home = () => {
       <Hero />
       <ExploreArtCollection />
       <ProductSection />
+      <hr className="w-full bg-bg3 h-[2px] mx-auto border-0" />
+      {/* <ProjectShowcase /> */}
+      <MyWorksSection />
       <CustomizerSection />
       <ContactUsSection />
       <hr className="w-full bg-bg3 h-[2px] mx-auto border-0" />
