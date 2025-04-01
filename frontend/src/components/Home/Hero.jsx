@@ -27,7 +27,7 @@ const mediaItems = [
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
+  const videoRefs = useRef([]);
   const heroSectionRef = useRef(null);
 
   useEffect(() => {
@@ -35,42 +35,39 @@ const Hero = () => {
 
     if (currentItem.type === "image") {
       setIsPlaying(false);
-      // Auto-slide for images (5s delay)
       const timer = setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
       }, 5000);
       return () => clearTimeout(timer);
     } else {
-      // Start video automatically when the slide is active
       setIsPlaying(true);
     }
   }, [currentIndex]);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0; // Restart video when revisited
-      if (isPlaying) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === currentIndex) {
+          video.currentTime = 0;
+          video.play();
+        } else {
+          video.pause();
+        }
       }
-    }
-  }, [currentIndex, isPlaying]);
+    });
+  }, [currentIndex]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (videoRef.current) {
-          if (entry.isIntersecting) {
-            videoRef.current.play();
-            setIsPlaying(true);
-          } else {
-            videoRef.current.pause();
-            setIsPlaying(false);
-          }
+        if (!entry.isIntersecting) {
+          videoRefs.current.forEach((video) => {
+            if (video) video.pause();
+          });
+          setIsPlaying(false);
         }
       },
-      { threshold: 0.8 } // Trigger when 80% of the section is visible
+      { threshold: 0.5 }
     );
 
     if (heroSectionRef.current) {
@@ -85,27 +82,22 @@ const Hero = () => {
   }, []);
 
   const handleNext = () => {
-    {
-      isPlaying ? videoRef.current.pause() : null;
-    }
     setCurrentIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
   };
 
   const handlePrev = () => {
-    {
-      isPlaying ? videoRef.current.pause() : null;
-    }
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? mediaItems.length - 1 : prevIndex - 1
     );
   };
 
   const togglePlayPause = () => {
-    if (videoRef.current) {
+    const currentVideo = videoRefs.current[currentIndex];
+    if (currentVideo) {
       if (isPlaying) {
-        videoRef.current.pause();
+        currentVideo.pause();
       } else {
-        videoRef.current.play();
+        currentVideo.play();
       }
       setIsPlaying((prev) => !prev);
     }
@@ -121,7 +113,6 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Media Display */}
       <div className="absolute w-full max-w-[1728px] h-full flex items-center justify-center">
         {mediaItems.map((item, index) => (
           <div
@@ -139,13 +130,12 @@ const Hero = () => {
             ) : (
               <div className="relative w-full h-full flex justify-center items-center">
                 <video
-                  ref={index === currentIndex ? videoRef : null}
+                  ref={(el) => (videoRefs.current[index] = el)}
                   src={item.url}
                   className="w-auto h-full max-w-full object-contain"
-                  onEnded={handleNext} // Move to next slide when video ends
-                  autoPlay // Ensure video starts automatically when active
+                  onEnded={handleNext}
+                  playsInline
                 />
-                {/* Play/Pause Button */}
                 <button
                   onClick={togglePlayPause}
                   className="absolute bottom-6 left-6 bg-black/50 p-3 rounded-full text-white"
@@ -157,26 +147,17 @@ const Hero = () => {
           </div>
         ))}
       </div>
-
-      {/* Left Arrow */}
       <button
         onClick={handlePrev}
         className="absolute left-4 md:left-10 top-1/2 transform -translate-y-1/2 p-2 hover:scale-110 transition"
       >
         <ChevronLeft size={48} className="text-black" />
       </button>
-
-      {/* Right Arrow */}
       <button
         onClick={handleNext}
         className="absolute right-4 md:right-10 top-1/2 transform -translate-y-1/2 p-2 hover:scale-110 transition"
       >
         <ChevronRight size={48} className="text-black" />
-        {isPlaying ? (
-          <Pause size={24} className="hidden" />
-        ) : (
-          <Play size={24} className="hidden" />
-        )}
       </button>
     </section>
   );
