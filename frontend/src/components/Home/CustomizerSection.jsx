@@ -9,6 +9,20 @@ const CustomizerSection = () => {
   const sectionRef = useRef(null);
   const navigate = useNavigate();
 
+  const handleWhatsAppRedirect = () => {
+    setIsClicked(true);
+    const phoneNumber = "8140217322";
+    const message =
+      "Hello! I am interested in customizing an artwork.\nCould you please provide more details? 🎨✨";
+
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    setTimeout(() => {
+      window.open(url, "_blank");
+    }, 1000);
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -26,11 +40,6 @@ const CustomizerSection = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const handleClick = () => {
-    setIsClicked(true);
-    setTimeout(() => navigate("/customize"), 1000); // Redirect after animation
-  };
 
   return (
     <section
@@ -59,7 +68,7 @@ const CustomizerSection = () => {
               : {}
           }
           transition={{ duration: 0.6, ease: "easeOut" }}
-          onClick={handleClick}
+          onClick={handleWhatsAppRedirect}
         >
           {isClicked ? "💥" : "Click Here"}
         </motion.button>
@@ -161,6 +170,7 @@ const CustomizerSection = () => {
             ))}
         </motion.p>
 
+        {/* Video ref */}
         <div className="relative mt-6 pb-6 px-4">
           {isVisible ? (
             <video

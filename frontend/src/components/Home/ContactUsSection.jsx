@@ -31,7 +31,7 @@ const ContactUsSection = () => {
   // Handle Button Click Animation
   const handleButtonClick = () => {
     setButtonClicked(true);
-    setTimeout(() => navigate("/contact"), 1000); // Redirect after animation
+    setTimeout(() => navigate("/contactus"), 1000); // Redirect after animation
   };
 
   return (

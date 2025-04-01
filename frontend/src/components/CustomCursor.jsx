@@ -5,11 +5,11 @@ const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [bgPosition, setBgPosition] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
-  const [isVisible, setIsVisible] = useState(window.innerWidth >= 768); // Only show on md and larger
+  const [isVisible, setIsVisible] = useState(window.innerWidth >=200 ); // Only show on md and larger
 
   useEffect(() => {
     const updateVisibility = () => {
-      setIsVisible(window.innerWidth >= 768);
+      setIsVisible(window.innerWidth >= 200);
     };
 
     window.addEventListener("resize", updateVisibility);
@@ -58,7 +58,7 @@ const CustomCursor = () => {
 
       {/* Paint Palette Cursor 🎨 */}
       <motion.div
-        className="z-50 fixed text-[32px] pointer-events-none md:block hidden"
+        className="z-50 fixed text-[32px] pointer-events-none sm:block hidden"
         style={{
           left: position.x - 16,
           top: position.y - 16,
