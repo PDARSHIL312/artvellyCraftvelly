@@ -144,7 +144,7 @@ const Header = () => {
         : { opacity: 0, scale: 0.5, x: -50 },
       { duration: 0.2, delay: isOpen ? staggerList : 0 }
     );
-  }, [isOpen]);
+  }, [animate, isOpen, staggerList]);
 
   return (
     <header
