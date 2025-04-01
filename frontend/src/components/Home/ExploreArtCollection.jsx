@@ -1,95 +1,31 @@
-// import React from "react";
-// const artworks = [
-//   {
-//     id: 1,
-//     img: "sample-1.png",
-//     title: "New art 1",
-//     desciption:
-//       "Lorem l this is description nothing connected with it fuck Off!",
-//     link: "/product/1",
-//   },
-//   {
-//     id: 2,
-//     img: "sample-2.png",
-//     title: "Artwork 2",
-//     desciption:
-//       "Lorem l this is description nothing connected with it fuck Off!",
-//     link: "/product/2",
-//   },
-//   {
-//     id: 3,
-//     img: "sample-3.png",
-//     title: "Artwork 3",
-//     desciption:
-//       "Lorem l this is description nothing connected with it fuck Off!",
-//     link: "/product/3",
-//   },
-//   {
-//     id: 4,
-//     img: "sample-4.png",
-//     title: "Artwork 4",
-//     desciption:
-//       "Lorem l this is description nothing connected with it fuck Off!",
-//     link: "/product/4",
-//   },
-// ];
-
-// const ExploreArtCollection = () => {
-//   return (
-//     <section className="w-full py-4 md:h-auto bg-bg3 px-4 flex flex-col lg:flex-row items-center justify-between gap-5 ">
-//       {/* Left Section */}
-//       <div className="relative  flex flex-col  w-full lg:w-1/3 text-black items-center md:items-start">
-//         {/* Explore Art Text */}
-//         <h1 className="font-script italic text-md md:text-lg lg:text-xl lg:p-10 ">
-//           Explore
-//           <p className="font-swash pl-5 ">Art</p>
-//           <p className="font-swash pl-8 ">Collection</p>
-//         </h1>
-//         <img
-//           src="/ExploreArtCollectionFlowerImage.png"
-//           alt="Background Flower"
-//           onContextMenu={(e) => e.preventDefault()}
-//           className="absolute top-2 h-[150px] left-[185px]
-//           sm:top-0 sm:left-[350px] sm:h-[160px]
-//             md:top-4 md:left-36 md:h-[200px]
-//            lg:top-16 lg:left-[230px] lg:h-[300px] width-full mix-blend-multiply"
-//         />
-//       </div>
-//       {/* right Section */}
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full lg:w-2/3 p-5 h-[515px] ">
-//         {artworks.map((art) => (
-//           <div key={art.id} className="relative group overflow-hidden">
-//             <img
-//               src={art.img}
-//               alt={art.title}
-//               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-//             />
-//             {/* Hover Details */}
-//             <div className="p-2 absolute bottom-[-30px] left-0 w-full h-full md:h-2/3 bg-bg4/90 text-white/80 flex justify-center translate-y-full group-hover:translate-y-0 transition-all duration-300">
-//               <a href={art.link} className="text-[20px] font-script">
-//                 {art.title}
-//                 <p className="flex justify-start text-[14px] font-serif text-black">
-//                   {art.desciption}
-//                 </p>
-//               </a>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ExploreArtCollection;
-
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const artworks = [
-  { id: 1, img: "sample-1.png", title: "New Art 1", link: "/product/1" },
-  { id: 2, img: "sample-2.png", title: "Artwork 2", link: "/product/2" },
-  { id: 3, img: "sample-3.png", title: "Artwork 3", link: "/product/3" },
-  { id: 4, img: "sample-4.png", title: "Artwork 4", link: "/product/4" },
+  {
+    id: 1,
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529158/canvasnatural_lbcncn.jpg",
+    title: "natural",
+    link: "/artworks",
+  },
+  {
+    id: 2,
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529163/handdrawblue_vahhfz.jpg",
+    title: "hand made",
+    link: "/artworks",
+  },
+  {
+    id: 3,
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529163/canvaspaint_kymvv3.jpg",
+    title: "tree with animal",
+    link: "/artworks",
+  },
+  {
+    id: 4,
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529170/table_tvh5yp.jpg",
+    title: "table art",
+    link: "/artworks",
+  },
 ];
 
 const ExploreArtCollection = () => {
@@ -130,7 +66,7 @@ const ExploreArtCollection = () => {
 
         {/* Animated Background Flower Image */}
         <motion.img
-          src="/ExploreArtCollectionFlowerImage.png"
+          src="1flower2dot.webp"
           alt="Background Flower"
           className="absolute top-2 h-[150px] left-[185px]
             sm:top-0 sm:left-[350px] sm:h-[160px]

@@ -7,20 +7,20 @@ const categories = [
   {
     id: 1,
     name: "Paintings",
-    img: "sample-3.png",
-    link: "/category/paintings",
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529166/nilkanthvarni_anmon7.jpg",
+    link: "/artworks",
   },
   {
     id: 2,
     name: "Acrylic Items",
-    img: "sample-1.png",
-    link: "/category/acrylic",
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529166/trayacrylic_uadif9.jpg",
+    link: "/artworks",
   },
   {
     id: 3,
     name: "Custom Products",
-    img: "sample-4.png",
-    link: "/category/custom",
+    img: "https://res.cloudinary.com/darshilpatel/image/upload/v1743529162/god2_qq5h2g.jpg",
+    link: "/artworks/",
   },
 ];
 
@@ -55,7 +55,7 @@ const ProductSection = () => {
 
       {/* Moving Paintbrush */}
       <motion.img
-        src="/paintbrush.jpeg"
+        src="paintbrush.webp"
         alt="Paintbrush"
         className="absolute w-[80px] md:w-[100px] top-10 mix-blend-darken"
         initial={{ x: "-100%" }}
@@ -119,56 +119,3 @@ const ProductSection = () => {
 };
 
 export default ProductSection;
-
-// import React from "react";
-// import { ArrowRightCircle } from "lucide-react";
-// import CategoryCard from "./CategoryCard";
-
-// const categories = [
-//   {
-//     id: 1,
-//     name: "Paintings",
-//     img: "sample-3.png",
-//     link: "/category/paintings",
-//   },
-//   {
-//     id: 2,
-//     name: "Acrylic Items",
-//     img: "sample-1.png",
-//     link: "/category/acrylic",
-//   },
-//   {
-//     id: 3,
-//     name: "Custom Products",
-//     img: "sample-4.png",
-//     link: "/category/custom",
-//   },
-// ];
-
-// const ProductSection = () => {
-//   return (
-//     <section className="w-full flex flex-col gap-6 bg-bg2 py-8 px-6 md:px-12 lg:px-24">
-//       {/* Title & See More */}
-//       <div className="flex flex-col sm:flex-row sm:justify-between items-center">
-//         <h2 className="font-swash italic font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] text-center sm:text-left">
-//           Painting, Acrylic Items & Much More...
-//         </h2>
-//         <a
-//           href="/artworks"
-//           className="py-2 px-4 flex items-center text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] hover:text-white hover:bg-bg4 rounded-2xl"
-//         >
-//           See More <ArrowRightCircle className="ml-2" size={30} />
-//         </a>
-//       </div>
-
-//       {/* Product Categories Grid */}
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  w-full place-items-center">
-//         {categories.map((category) => (
-//           <CategoryCard key={category.id} category={category} />
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ProductSection;

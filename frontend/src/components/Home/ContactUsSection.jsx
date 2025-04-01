@@ -1,54 +1,3 @@
-// import React from "react";
-
-// const ContactUsSection = () => {
-//   return (
-//     <section className="relative w-full h-auto bg-bg2 flex flex-col items-center p-6 lg:p-10 gap-6">
-//       {/* Title */}
-//       <h2 className="font-swash font-bold italic text-[22px] sm:text-[28px] md:text-[32px] text-center px-6 py-2 w-auto max-w-full leading-[110%]">
-//         Discover a glimpse of our customers' unique creations, customized to
-//         match their vision.
-//       </h2>
-
-//       {/* Content Section */}
-//       <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-6 ">
-//         {/* Image Showcase */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-2/3">
-//           <img
-//             src="/sample-1.png"
-//             alt="Art 1"
-//             className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover rounded-lg"
-//           />
-//           <img
-//             src="/sample-4.png"
-//             alt="Art 2"
-//             className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]   object-cover rounded-lg"
-//           />
-//         </div>
-
-//         {/* Order & Contact Section */}
-//         <div className="relative w-full lg:w-1/3 md:text-right lg:text-right flex flex-col items-center p-2 min-h-[210px] sm:min-h-[270px] lg:min-h-[500px] h-auto ">
-//           <h1 className="font-script text-sm sm:text-md md:text-lg leading-[110%] border">
-//             Order <br /> Now
-//           </h1>
-//           <button className="bg-bg4/80 text-black px-4 py-2 md:py-3 text-[12px] sm:text-[16px] md:text-[20px] rounded-full font-serif mt-4 hover:bg-bg4 z-10">
-//             Contact Us
-//           </button>
-
-//           {/* Background Image */}
-//           <img
-//             src="/jarwithbirdfly.png"
-//             alt="Decorative Background"
-//             onContextMenu={(e) => e.preventDefault()}
-//             className="absolute bottom-0 right-5 h-[220px] sm:h-[270px] sm:right-20 lg:h-[500px] lg:right-0 mix-blend-darken"
-//           />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default ContactUsSection;
-
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -120,7 +69,11 @@ const ContactUsSection = () => {
         {/* Image Showcase with Swapping Effect */}
         <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-2/3">
           <motion.img
-            src={swapImages ? "/sample-4.png" : "/sample-1.png"}
+            src={
+              swapImages
+                ? "https://res.cloudinary.com/darshilpatel/image/upload/v1743529170/watch_nuufr7.jpg"
+                : "https://res.cloudinary.com/darshilpatel/image/upload/f_auto/v1743529158/bajot_qimuhn.jpg"
+            }
             alt="Art 1"
             className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover rounded-lg"
             initial={{ opacity: 0.8, rotate: 0 }}
@@ -134,7 +87,11 @@ const ContactUsSection = () => {
             }}
           />
           <motion.img
-            src={swapImages ? "/sample-1.png" : "/sample-4.png"}
+            src={
+              swapImages
+                ? "https://res.cloudinary.com/darshilpatel/image/upload/f_auto/v1743529158/bajot_qimuhn.jpg"
+                : "https://res.cloudinary.com/darshilpatel/image/upload/v1743529170/watch_nuufr7.jpg"
+            }
             alt="Art 2"
             className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover rounded-lg"
             initial={{ opacity: 0.8, rotate: 0 }}
@@ -191,7 +148,7 @@ const ContactUsSection = () => {
 
           {/* Background Image with Slight Floating Animation */}
           <motion.img
-            src="/jarwithbirdfly.png"
+            src="/jarwithbird.webp"
             alt="Decorative Background"
             onContextMenu={(e) => e.preventDefault()}
             className="absolute bottom-0 right-5 h-[220px] sm:h-[270px] sm:right-20 lg:h-[500px] lg:right-0 mix-blend-darken"

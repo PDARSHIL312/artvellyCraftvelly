@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import MainLayout from "./layouts/MainLayout";
 import Aboutus from "./pages/Aboutus";
 import CustomCursor from "./components/CustomCursor"; // Import cursor
+import BlogPage from "./pages/BlogPage";
+import VideoPage from "./pages/VideoPage";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="aboutus" element={<Aboutus />} />
+            <Route path="videos" element={<VideoPage />} />
+            <Route path="blog" element={<BlogPage />} />
           </Route>
         </Routes>
       </Router>
