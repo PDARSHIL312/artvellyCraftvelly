@@ -110,7 +110,8 @@ import { useState, useEffect } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { motion, useAnimate, stagger } from "framer-motion";
+import { useAnimate, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

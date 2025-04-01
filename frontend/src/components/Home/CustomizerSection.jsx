@@ -1,82 +1,3 @@
-// import React, { useState, useEffect, useRef } from "react";
-
-// const CustomizerSection = () => {
-//   const [isVisible, setIsVisible] = useState(false);
-//   const videoRef = useRef(null);
-//   const sectionRef = useRef(null);
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setIsVisible(true);
-//           observer.unobserve(sectionRef.current); // Stop observing after loading
-//         }
-//       },
-//       { threshold: 0.3 } // When 30% of the section is visible
-//     );
-
-//     if (sectionRef.current) {
-//       observer.observe(sectionRef.current);
-//     }
-
-//     return () => observer.disconnect();
-//   }, []);
-
-//   return (
-//     <section
-//       ref={sectionRef}
-//       className="relative w-full bg-bg3 flex flex-col md:flex-row items-center justify-between p-6 lg:p-12 gap-2"
-//     >
-//       {/* Left Side */}
-//       <div
-//         className="relative h-[250px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full md:w-1/2
-//       lg:w-1/3 flex flex-col items-center md:place-items-start p-2"
-//       >
-//         <h1 className="font-script p-4 text-sm sm:text-[38px] md:text-md lg:text-lg leading-[110%] text-center md:text-start">
-//           Want <span className="block font-swash">To</span>{" "}
-//           <span className="block font-swash">Customize?</span>
-//         </h1>
-//         <button className="bg-bg4/80 absolute top-40 md:top-64 md:left-14 lg:top-66 lg:left-28 text-black px-4 py-2 text-[18px] sm:text-[22px] md:text-[24px] lg:text-[28px]  rounded-2xl font-serif mt-2 w-fit z-10 hover:font-bold hover:bg-bg4">
-//           Click Here
-//         </button>
-//         <img
-//           src="threehalfplant.png"
-//           alt="Background"
-//           onContextMenu={(e) => e.preventDefault()}
-//           className="mix-blend-multiply absolute left-2 bottom-0 h-[200px] sm:h-[300px] md:h-[400px]  opacity-85"
-//         />
-//       </div>
-
-//       {/* Right Side */}
-//       <div className="w-full md:w-1/2 lg:w-2/3 h-auto md:min-h-[490px] flex flex-col items-center text-center mt-6 lg:mt-0 lg:py-4">
-//         <p className="font-swash font-bold text-[22px] sm:text-[28px] md:text-[36px] leading-[120%] md:pt-4 md:px-3">
-//           "We bring your vision to life with custom artwork tailored to your
-//           ideas and desires"
-//         </p>
-//         <div className="relative mt-6 pb-6 px-4">
-//           {isVisible ? (
-//             <video
-//               ref={videoRef}
-//               src="/sample-video.mp4"
-//               controls
-//               autoPlay
-//               muted
-//               className="w-[320px] sm:w-[480px] md:w-[875px] h-auto rounded-lg border-2 border-bg4"
-//             />
-//           ) : (
-//             <div className="w-[320px] sm:w-[480px] md:w-[875px] h-[200px] md:h-[492px] flex items-center justify-center bg-gray-300 rounded-lg">
-//               <p className="text-gray-700">Loading Video...</p>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default CustomizerSection;
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -204,7 +125,7 @@ const CustomizerSection = () => {
 
         {/* Animated Leaf Falling */}
         <motion.img
-          src="threehalfplant.png"
+          src="1flower3half.webp"
           alt="Background"
           onContextMenu={(e) => e.preventDefault()}
           className="mix-blend-multiply absolute left-2 bottom-0 h-[200px] sm:h-[300px] md:h-[400px] opacity-85"
@@ -244,11 +165,11 @@ const CustomizerSection = () => {
           {isVisible ? (
             <video
               ref={videoRef}
-              src="/sample-video.mp4"
+              src="https://res.cloudinary.com/darshilpatel/video/upload/v1743529841/video01_kk51yj.mp4"
               controls
               autoPlay
               muted
-              className="w-[320px] sm:w-[480px] md:w-[875px] h-auto rounded-lg border-2 border-bg4"
+              className="w-[320px] sm:w-[480px] md:w-[875px] h-[600px] rounded-lg border-2 border-bg4"
             />
           ) : (
             <div className="w-[320px] sm:w-[480px] md:w-[875px] h-[200px] md:h-[492px] flex items-center justify-center bg-gray-300 rounded-lg">

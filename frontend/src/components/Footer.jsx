@@ -85,7 +85,7 @@ const Footer = () => {
               </p>
               <div className="flex justify-center gap-4 mt-4">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/artvelly_craftvelly/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
