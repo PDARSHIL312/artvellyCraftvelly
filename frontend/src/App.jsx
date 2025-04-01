@@ -8,6 +8,7 @@ import Aboutus from "./pages/Aboutus";
 import CustomCursor from "./components/CustomCursor"; // Import cursor
 import BlogPage from "./pages/BlogPage";
 import VideoPage from "./pages/VideoPage";
+import ContactUs from "./pages/ContactUs";
 
 const App = () => {
   return (
@@ -18,8 +19,9 @@ const App = () => {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="aboutus" element={<Aboutus />} />
-            <Route path="videos" element={<VideoPage />} />
+            <Route path="contactus" element={<ContactUs />} />
             <Route path="blog" element={<BlogPage />} />
+            <Route path="videos" element={<VideoPage />} />
           </Route>
         </Routes>
       </Router>
