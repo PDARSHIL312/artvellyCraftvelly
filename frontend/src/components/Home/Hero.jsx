@@ -44,6 +44,7 @@ const Hero = () => {
     }
   }, [currentIndex]);
 
+  // see that is the video is not playing in bg and stop to play at the same time
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
       if (video) {
@@ -57,6 +58,7 @@ const Hero = () => {
     });
   }, [currentIndex]);
 
+  // if user scroll than this will automatically stop after not seen that section
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -135,6 +137,7 @@ const Hero = () => {
                   className="w-auto h-full max-w-full object-contain"
                   onEnded={handleNext}
                   playsInline
+                  muted
                 />
                 <button
                   onClick={togglePlayPause}
